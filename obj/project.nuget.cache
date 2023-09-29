@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "M7maFy5u80Bd5lfFn+ZpQPvFk8X+U9uLOL4tzB1dslvaCLaQ/dA4csiVZiz3vznnXTIqvJiyd3CJdyW4EBXhMg==",
+  "dgSpecHash": "aXhaPai6fRNduVxgBoFMvAR569qwfF0AFZfsow0gHQBKc16VHXm3KrLe/H8BP/enyQBb5AMMxTd6R227mTY5BQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\matheus.s.vaz\\MvSystem\\MvSystem.csproj",
   "expectedPackageFiles": [
@@ -28,9 +28,10 @@
     "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\microsoft.jsinterop\\7.0.11\\microsoft.jsinterop.7.0.11.nupkg.sha512",
     "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.11\\microsoft.jsinterop.webassembly.7.0.11.nupkg.sha512",
+    "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512",
     "C:\\Users\\matheus.s.vaz\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.11\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.11.nupkg.sha512"
   ],
   "logs": []
