@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MvSystem
 {
-    public class Configurations
+    public class Configuration
     {
         public static string ApiUrl { get; set; } = "http://localhost:5095";
     }
