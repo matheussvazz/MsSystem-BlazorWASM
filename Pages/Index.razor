@@ -29,6 +29,11 @@ else
                     <td>@item.Id</td>
                     <td>@item.Title</td>
                     <td>@item.Description</td>
+                    <td>
+                        <button class="btn btn-info" @onclick="() => GetAsync(item.Id)">
+                            EDIT
+                        </button>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -74,6 +79,14 @@ else
 
         if (category is not null)
             _categories?.Add(category);
+
+    }
+
+    public async Task GetAsync(int id)
+    {
+        var client = new RestClient();
+        var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories/{id}");
+        _category = await client.GetAsync<Category?>(request);
 
     }
 
