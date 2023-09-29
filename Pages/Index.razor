@@ -52,7 +52,7 @@ else
     <input type="text" class="form-control" @bind="_category.Description" />
 </div>
 <button class="btn btn-primary" @onclick="UpsertAsync">SAVE</button>
-<button class="btn btn-primary" @onclick="PostAsync">SAVE</button>
+<button class="btn btn-danger" @onclick="DeleteAsync">DELETE</button>
 
 
 @code {
@@ -105,10 +105,17 @@ else
 
     public async Task GetAsync(int id)
     {
+
         var client = new RestClient();
         var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories/{id}");
         _category = await client.GetAsync<Category?>(request);
+    }
 
+    public async Task DeleteAsync()
+    {
+        var client = new RestClient();
+        var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories/{_category.Id}");
+        _category = await client.DeleteAsync<Category?>(request);
     }
 
 
