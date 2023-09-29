@@ -42,11 +42,7 @@ else
 
 <hr>
 
-
-<div class="mb-3">
-    <label class="form-label">ID</label>
-    <input type="text" class="form-control" @bind="_category.Id" />
-</div>
+<input type="hidden" class="form-control" @bind="_category.Id" />
 <div class="mb-3">
     <label class="form-label">Title</label>
     <input type="text" class="form-control" @bind="_category.Title" />
@@ -55,7 +51,8 @@ else
     <label class="form-label">Description</label>
     <input type="text" class="form-control" @bind="_category.Description" />
 </div>
-<button class="btn btn-primary" @onclick="PostAsync">Submit</button>
+<button class="btn btn-primary" @onclick="UpsertAsync">SAVE</button>
+<button class="btn btn-primary" @onclick="PostAsync">SAVE</button>
 
 
 @code {
@@ -71,14 +68,38 @@ else
         _categories = await client.GetAsync<List<Category>?>(request);
     }
 
-    private async Task PostAsync()
+    private async Task UpsertAsync()
     {
         var client = new RestClient();
-        var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories").AddJsonBody(_category);
-        var category = await client.PostAsync<Category?>(request);
+        Category? category;
 
-        if (category is not null)
-            _categories?.Add(category);
+        if (_category?.Id == 0)
+        {
+
+            var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories")
+            .AddJsonBody(_category);
+            category = await client.PostAsync<Category?>(request);
+
+            if (category is not null)
+                _categories?.Add(category);
+
+        }
+        else
+        {
+            var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories/{_category?.Id}")
+            .AddJsonBody(_category);
+            await client.PutAsync<Category?>(request);
+
+            var category = _categories?
+            .FirstOrDefault(x => x.Id == _category?.Id);
+
+            if (category is not null)
+            {
+                category.Title = _category.Title;
+                category.Description = _category.Description;
+            }
+
+        }
 
     }
 
