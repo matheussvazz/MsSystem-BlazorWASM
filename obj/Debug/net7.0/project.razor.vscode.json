@@ -48,84 +48,6 @@
         }
       },
       {
-        "HashCode": 1224601078,
-        "Kind": "Components.Component",
-        "Name": "MvSystem.Pages.Counter",
-        "AssemblyName": "MvSystem",
-        "DisplayName": "MvSystem.Pages.Counter",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "MvSystem.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
-          "Common.TypeNamespace": "MvSystem.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -145775066,
-        "Kind": "Components.Component",
-        "Name": "MvSystem.Pages.Counter",
-        "AssemblyName": "MvSystem",
-        "DisplayName": "MvSystem.Pages.Counter",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MvSystem.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "MvSystem.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
-          "Common.TypeNamespace": "MvSystem.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 2089655517,
-        "Kind": "Components.Component",
-        "Name": "MvSystem.Pages.FetchData",
-        "AssemblyName": "MvSystem",
-        "DisplayName": "MvSystem.Pages.FetchData",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "MvSystem.Pages.FetchData",
-          "Common.TypeNameIdentifier": "FetchData",
-          "Common.TypeNamespace": "MvSystem.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 58117126,
-        "Kind": "Components.Component",
-        "Name": "MvSystem.Pages.FetchData",
-        "AssemblyName": "MvSystem",
-        "DisplayName": "MvSystem.Pages.FetchData",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MvSystem.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "MvSystem.Pages.FetchData",
-          "Common.TypeNameIdentifier": "FetchData",
-          "Common.TypeNamespace": "MvSystem.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
         "HashCode": -413661722,
         "Kind": "Components.Component",
         "Name": "MvSystem.Pages.Index",
@@ -20668,16 +20590,6 @@
     {
       "FilePath": "c:\\Users\\matheus.s.vaz\\MvSystem\\App.razor",
       "TargetPath": "App.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\matheus.s.vaz\\MvSystem\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\matheus.s.vaz\\MvSystem\\Pages\\FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
       "FileKind": "component"
     },
     {
