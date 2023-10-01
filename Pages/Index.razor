@@ -47,10 +47,19 @@ else
     <label class="form-label">Title</label>
     <input type="text" class="form-control" @bind="_category.Title" />
 </div>
+
 <div class="mb-3">
     <label class="form-label">Description</label>
     <input type="text" class="form-control" @bind="_category.Description" />
 </div>
+
+@if (_deleted)
+{
+    <div class="alert alert-danger" role="alert">
+        Categoria excluida com sucesso!
+    </div>
+}
+
 <button class="btn btn-primary" @onclick="UpsertAsync">
     @if (_category.Id is not 0)
     {
@@ -61,17 +70,21 @@ else
         <span>CREATE</span>
     }
 </button>
-<button class="btn btn-primary" @onclick="New">NEW</button>
+
+@if (_category.Id is not 0)
+{
+    <button class="btn btn-info" @onclick="New">NEW</button>
+}
+
 @if (_category.Id != 0)
 {
     <button class="btn btn-danger" @onclick="DeleteAsync">DELETE</button>
 }
 
 
-
 @code {
 
-
+    private bool _deleted;
     private List<Category>? _categories;
     private Category _category = new();
 
@@ -95,7 +108,11 @@ else
             category = await client.PostAsync<Category?>(request);
 
             if (category is not null)
+            {
                 _categories?.Add(category);
+                New();
+            }
+
 
         }
         else
@@ -115,6 +132,8 @@ else
 
         }
 
+        _deleted = false;
+
     }
 
     public async Task GetAsync(int id)
@@ -123,6 +142,7 @@ else
         var client = new RestClient();
         var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories/{id}");
         _category = await client.GetAsync<Category?>(request);
+        _deleted = false;
     }
 
     public async Task DeleteAsync()
@@ -130,10 +150,12 @@ else
         var client = new RestClient();
         var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories/{_category.Id}");
         _category = await client.DeleteAsync<Category?>(request);
+        _deleted = true;
     }
     public void New()
     {
         _category = new();
+        _deleted = false;
     }
 
 
