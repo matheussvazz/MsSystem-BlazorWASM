@@ -51,8 +51,22 @@ else
     <label class="form-label">Description</label>
     <input type="text" class="form-control" @bind="_category.Description" />
 </div>
-<button class="btn btn-primary" @onclick="UpsertAsync">SAVE</button>
-<button class="btn btn-danger" @onclick="DeleteAsync">DELETE</button>
+<button class="btn btn-primary" @onclick="UpsertAsync">
+    @if (_category.Id is not 0)
+    {
+        <span>SAVE</span>
+    }
+    else
+    {
+        <span>CREATE</span>
+    }
+</button>
+<button class="btn btn-primary" @onclick="New">NEW</button>
+@if (_category.Id != 0)
+{
+    <button class="btn btn-danger" @onclick="DeleteAsync">DELETE</button>
+}
+
 
 
 @code {
@@ -116,6 +130,10 @@ else
         var client = new RestClient();
         var request = new RestRequest($"{Configuration.ApiUrl}/v1/categories/{_category.Id}");
         _category = await client.DeleteAsync<Category?>(request);
+    }
+    public void New()
+    {
+        _category = new();
     }
 
 
